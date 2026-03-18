@@ -6,7 +6,7 @@ const testimonials = [
     name: "Juliano Vaz",
     role: "Ex-aluno ADA Recife · Turma 2021",
     quote:
-      "Antes da Academy, eu achava que inovação era só sobre tecnologia. Aprendi que inovar é, antes de tudo, entender as pessoas. O CBL mudou completamente minha forma de pensar projetos.",
+      "A área de inovação na Academy é o que nos diferencia. Ela nos dá as ferramentas de negócios e gestão para não 'chutarmos no escuro'. Com métodos de pesquisa e validação, aprendemos a reduzir riscos e a tomar decisões assertivas, transformando desafios em produtos reais e competitivos.",
     accent: "yellow" as const,
     image: "/juliano.jpg"
   },
@@ -34,12 +34,36 @@ const testimonials = [
     accent: "yellow" as const,
     image: "/arthur.jpg"
   },
+  {
+    name: "Mary Santoso",
+    role: "Ex-aluna ADA Indonésia · Turma 2022",
+    quote:
+      "Como mãe em tempo integral, a Apple Developer Academy me ajudou a transformar e me concentrar na minha missão de assistir crianças com dificuldades de aprendizado semelhantes às que minha filha enfrenta",
+    accent: "blue" as const,
+    image: "/mary.jpg"
+  },
 ];
 
 const TestimonialsSection = () => {
   return (
     <section className="bg-muted/30 py-16 md:py-24">
       <div className="container mx-auto px-6">
+        
+        {/* === SUA FOTO NOVA ENTRA AQUI === */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mx-auto mb-16 max-w-5xl overflow-hidden rounded-3xl shadow-lg"
+        >
+          <img 
+            src="/turma.jpg" 
+            alt="Foto da galera da Academy" 
+            className="h-[300px] md:h-[450px] w-full object-cover"
+          />
+        </motion.div>
+        {/* ================================ */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
