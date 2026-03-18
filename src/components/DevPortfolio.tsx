@@ -12,17 +12,17 @@ interface DevPortfolioProps {
 
 const devs = [
   {
-    name: "Marina Souza",
+    name: "Mary Santoso",
     role: "iOS Developer & UX Researcher",
-    photo: "👩‍💻",
-    case: "MindFlow — App de Saúde Mental",
-    pain: "Estudantes universitários relatavam dificuldade em acompanhar seu bem-estar emocional ao longo do semestre.",
+    image: "/mary.jpg",
+    case: "WonderJack — App de Saúde Mental",
+    pain: "A falta de ferramentas digitais que sejam adequadas e engajadoras para crianças neurodivergentes e que consigam treinar ativamente suas funções executivas e processos mentais de forma lúdica.",
     journey: [
-      "Entrevistas com 30+ estudantes sobre rotina e saúde mental",
-      "Mapeamento de dores usando framework HCD",
-      "Prototipagem rápida com testes semanais",
-      "Iteração baseada em feedback real dos usuários",
-      "Lançamento na App Store com 2.000+ downloads",
+      <><strong>Pesquisa Empática:</strong> Entrevistas com mais de 30 estudantes para entender suas rotinas e desafios de saúde mental.</>,
+      <><strong>Definição:</strong> Mapeamento das dores e necessidades utilizando o framework de Human-Centered Design (HCD).</>,
+      <><strong>Ideação e Prototipagem:</strong> Criação de protótipos rápidos submetidos a testes semanais.</>,
+      <><strong>Iteração:</strong> Melhorias contínuas baseadas no feedback real dos usuários de teste.</>,
+      <><strong>Lançamento:</strong> Publicação na App Store, alcançando rapidamente a marca de mais de 2.000 downloads.</>,
     ],
     result: "Redução de 40% nos relatos de estresse entre usuários ativos após 3 meses de uso.",
     techs: ["Swift", "SwiftUI", "Core Data", "HealthKit"],
