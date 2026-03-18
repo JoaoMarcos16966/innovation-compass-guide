@@ -3,46 +3,36 @@ import TestimonialCard from "./TestimonialCard";
 
 const testimonials = [
   {
-    name: "Mariana Costa",
-    role: "Ex-aluna · Turma 2023",
+    name: "Juliano Vaz",
+    role: "Ex-aluno ADA Recife · Turma 2021",
     quote:
       "Antes da Academy, eu achava que inovação era só sobre tecnologia. Aprendi que inovar é, antes de tudo, entender as pessoas. O CBL mudou completamente minha forma de pensar projetos.",
     accent: "yellow" as const,
+    image: "/juliano.jpg"
   },
   {
-    name: "Lucas Oliveira",
-    role: "Ex-aluno · Turma 2022",
+    name: "Antonio Chiappetta",
+    role: "Ex-aluno ADA Itália · Turma 2016",
     quote:
-      "O mais transformador foi aprender a errar rápido. Na Academy, prototipar e testar com pessoas reais me ensinou que nenhuma ideia sobrevive ao primeiro contato com o usuário — e tudo bem.",
+      "A Apple Developer Academy não se dedica apenas à aprendizagem de programação. Ela ajuda os estudantes a superar obstáculos e os capacita, além de ter me proporcionado o entusiasmo e a curiosidade que me movem hoje.",
     accent: "blue" as const,
+    image: "/foto_antonio.jpg"
   },
   {
-    name: "Camila Rodrigues",
-    role: "Ex-aluna · Turma 2023",
+    name: "Aisyah Widya Nur Shadrina",
+    role: "Ex-aluna ADA Indonésia · Turma 2020",
     quote:
       "Trabalhar em times multidisciplinares foi desafiador, mas me mostrou que as melhores soluções nascem quando você junta pessoas com visões diferentes. Essa é a verdadeira inovação.",
     accent: "pink" as const,
+    image: "/aysha.jpg"
   },
   {
-    name: "Pedro Henrique",
-    role: "Ex-aluno · Turma 2021",
+    name: "Arthur Motelevicz",
+    role: "Ex-aluno ADA Curitiba · Turma 2013",
     quote:
-      "A visão humana que a Academy trouxe para o desenvolvimento me acompanha até hoje no mercado. Empresas querem pessoas que entendem problemas, não apenas que escrevem código.",
+      "A Apple Developer Academy me deu forças para ir em busca dos meus sonhos e implementar minhas ideias com algo ao qual dediquei toda minha vida",
     accent: "yellow" as const,
-  },
-  {
-    name: "Ana Beatriz",
-    role: "Ex-aluna · Turma 2022",
-    quote:
-      "Aprendi que inovação de verdade é inclusiva. Nossos projetos sempre começavam perguntando: quem estamos deixando de fora? Isso mudou minha perspectiva como desenvolvedora.",
-    accent: "blue" as const,
-  },
-  {
-    name: "Rafael Mendes",
-    role: "Ex-aluno · Turma 2023",
-    quote:
-      "O processo de investigação do CBL me ensinou a fazer as perguntas certas. Hoje, antes de abrir o Xcode, eu abro um caderno e converso com pessoas. Esse é o superpoder da Academy.",
-    accent: "pink" as const,
+    image: "/arthur.jpg"
   },
 ];
 

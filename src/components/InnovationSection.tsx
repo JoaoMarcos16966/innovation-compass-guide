@@ -14,7 +14,7 @@ const concepts = [
     icon: Lightbulb,
     title: "O que é Inovação?",
     description:
-      "Inovação não é apenas criar algo novo — é resolver um problema real de forma criativa, viável e com impacto. Na Academy, inovação começa com empatia e termina com entregas que transformam realidades.",
+      "Inovação na Apple Developer Academy baseia-se não apenas em noções de programação, e sim numa metodologia que visa a criação de tecnologias que causem algum impacto social, ou melhor, que buscam trazer soluções para problemas reais do dia à dia do usuário. ",
     gradient: "yellow" as const,
   },
   {

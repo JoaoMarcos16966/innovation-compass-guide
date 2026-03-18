@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
 
 interface TestimonialCardProps {
   name: string;
@@ -7,6 +6,7 @@ interface TestimonialCardProps {
   quote: string;
   accent: "yellow" | "blue" | "pink";
   index: number;
+  image: string;
 }
 
 const accentBorder = {
@@ -15,13 +15,7 @@ const accentBorder = {
   pink: "border-l-academy-pink",
 };
 
-const accentBg = {
-  yellow: "bg-academy-yellow/15",
-  blue: "bg-academy-blue/15",
-  pink: "bg-academy-pink/15",
-};
-
-const TestimonialCard = ({ name, role, quote, accent, index }: TestimonialCardProps) => {
+const TestimonialCard = ({ name, role, quote, accent, index, image }: TestimonialCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
@@ -30,12 +24,19 @@ const TestimonialCard = ({ name, role, quote, accent, index }: TestimonialCardPr
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={`rounded-xl border-l-4 ${accentBorder[accent]} bg-card p-6 shadow-sm`}
     >
-      <div className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg ${accentBg[accent]}`}>
-        <Quote className="h-5 w-5 text-foreground" />
-      </div>
-      <p className="mb-4 text-sm italic leading-relaxed text-muted-foreground">
+      {/* Aqui entra a sua foto! */}
+      <img 
+        src={image} 
+        alt={`Foto de ${name}`} 
+        className="mb-4 h-12 w-12 rounded-full object-cover" 
+      />
+      
+      {/* Aqui entra o texto do depoimento */}
+      <p className="mb-6 text-sm italic text-muted-foreground">
         "{quote}"
       </p>
+
+      {/* Aqui fica o nome e o cargo */}
       <div>
         <p className="font-semibold text-foreground">{name}</p>
         <p className="text-xs text-muted-foreground">{role}</p>

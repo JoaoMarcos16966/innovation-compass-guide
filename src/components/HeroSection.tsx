@@ -4,14 +4,21 @@ import { Lightbulb } from "lucide-react";
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden py-16 md:py-24">
-      {/* Gradient background */}
+      {/* 1. Imagem de fundo (Removemos o -z-10) */}
       <div
-        className="absolute inset-0 -z-10"
-        style={{ background: "var(--gradient-hero)" }}
+        className="absolute inset-0"
+        style={{ 
+          backgroundImage: "url('/fundo.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}
       />
-      <div className="absolute inset-0 -z-10 bg-background/40 backdrop-blur-sm" />
+      
+      {/* 2. Camada que escurece a foto (Removemos o -z-10) */}
+      <div className="absolute inset-0 bg-background/40 backdrop-blur-sm" />
 
-      <div className="container mx-auto px-6 text-center">
+      {/* 3. Conteúdo: Adicionamos "relative z-10" para garantir que o texto fica por cima da imagem */}
+      <div className="relative z-10 container mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
