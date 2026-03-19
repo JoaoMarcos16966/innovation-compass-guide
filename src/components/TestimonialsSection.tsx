@@ -42,6 +42,14 @@ const testimonials = [
     accent: "blue" as const,
     image: "/mary.jpg"
   },
+  {
+    name: "Pedro Barroca",
+    role: "Ex-aluno ADA Recife · Turma 2018",
+    quote:
+      "O que aprendi mudou bastante a forma como enxergo meus aplicativos. Hoje penso neles de forma mais estratégica, com propostas de valor mais claras, que os tornam realmente relevantes e competitivos. Também passei a pensar na sustentabilidade das ideias definindo um modelo de negócios desde o início do processo.",
+    accent: "pink" as const,
+    image: "/barroca.jpeg"
+  },
 ];
 
 const TestimonialsSection = () => {

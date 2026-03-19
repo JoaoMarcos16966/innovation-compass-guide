@@ -15,6 +15,7 @@ const devs = [
     name: "Mary Santoso",
     role: "iOS Developer & UX Researcher",
     image: "/mary.jpg",
+    appImage: "/wonderjack.jpg",
     case: "WonderJack — App de Saúde Mental",
     pain: "A falta de ferramentas digitais que sejam adequadas e engajadoras para crianças neurodivergentes e que consigam treinar ativamente suas funções executivas e processos mentais de forma lúdica.",
     journey: [
@@ -28,43 +29,45 @@ const devs = [
     techs: ["Swift", "SwiftUI", "Core Data", "HealthKit"],
   },
   {
-    name: "Lucas Ferreira",
+    name: "Antonio Chiappetta",
     role: "Full-Stack Developer & Design Thinker",
-    photo: "👨‍💻",
-    case: "EcoTrack — Sustentabilidade no Campus",
-    pain: "A comunidade acadêmica não tinha visibilidade sobre o impacto ambiental de suas ações diárias no campus.",
+    image: "/foto_antonio.jpg",
+    appImage: "/elevate.jpg",
+    case: "Elevate — App de Treinamento Cerebral",
+    pain: "Muitas pessoas buscam melhorar habilidades cognitivas (como memória, foco e concisão na escrita), mas têm dificuldade em encontrar métodos que sejam, ao mesmo tempo, baseados em ciência, estruturados e suficientemente engajadores para manter uma prática diária.",
     journey: [
-      "Workshop de empatia com funcionários e alunos",
-      "Criação de personas baseadas em dados reais",
-      "CBL: desafio de reduzir pegada de carbono do campus",
-      "Desenvolvimento ágil com sprints de 2 semanas",
-      "Apresentação para diretoria da universidade",
+      <><strong>Fundação na Academy:</strong> Imersão no primeiro grupo da ADA Nápoles (2016), focando em aprendizagem prática e colaboração intensa com mentores.</>,
+      <><strong>Desenvolvimento de Mindset:</strong> Superação de obstáculos técnicos e criativos, cultivando o "entusiasmo e a curiosidade" essenciais para a inovação.</>,
+      <><strong>Engenharia Aplicada:</strong> Aplicação da formação em engenharia da computação para resolver problemas complexos de desenvolvimento de jogos cognitivos.</>,
+      <><strong>Carreira Internacional:</strong> Mudança para Paris para integrar a Elevate Labs, aplicando as habilidades adquiridas na academia em um produto global.</>,
+      <><strong>Criação de Jogos Desafiadores:</strong> Desenvolvimento de funcionalidades dentro do app, como o jogo "Brevity", focado em treinar a concisão na escrita.</>,
     ],
-    result: "O app foi adotado oficialmente pelo campus, ajudando a reduzir 15% no desperdício de recursos.",
-    techs: ["React Native", "Node.js", "Firebase", "Charts"],
+    result: "O Elevate consolidou-se como um app premiado de treinamento cerebral, ajudando milhões de usuários a manterem suas mentes afiadas. Para Antonio, é a realização de uma carreira de sucesso, movida pela base da Academy: “Ela ajuda os estudantes a superar obstáculos e os capacita”",
+    techs: ["Swift", "iOS SDK", "Game Development", "Engenharia de Software"],
   },
   {
-    name: "Ana Clara Ribeiro",
-    role: "Product Designer & Developer",
-    photo: "👩‍🎨",
-    case: "AcessaJá — Acessibilidade Urbana",
-    pain: "Pessoas com deficiência física enfrentavam barreiras invisíveis ao se locomover pela cidade.",
+    name: "Graciela Gabrielle",
+    role: "Co-fundadora & CEO · ADA Jacarta",
+    image: "/mulheres.jpg",
+    appImage: "/petanetra.jpg",
+    case: "PetaNetra — Navegação Interna com AR",
+    pain: "A falta de autonomia de pessoas cegas ou com deficiência visual (mais de 4 milhões apenas na Indonésia) para se locomoverem de forma segura e independente em ambientes internos.",
     journey: [
-      "Imersão: acompanhar cadeirantes em trajetos reais",
-      "Identificação de 50+ pontos de dor no trajeto urbano",
-      "Co-criação do app com usuários com deficiência",
-      "Testes de usabilidade com tecnologias assistivas",
-      "Parceria com prefeitura para dados de acessibilidade",
+      <><strong>Motivação e Propósito:</strong> Inspiração direta na vivência dos pais de Graciela e no desejo da equipe de gerar um impacto social real.</>,
+      <><strong>União da Equipe:</strong> Colaboração apaixonada entre três fundadoras (Graciela, Jessi e Yafonia) durante o programa da Academy em Jacarta.</>,
+      <><strong>Desenvolvimento com AR:</strong> Uso avançado de Realidade Aumentada para criar trajetos rápidos e seguros, detectando paredes, pisos e outros objetos.</>,
+      <><strong>Mapeamento do Mundo Real:</strong> Parcerias estratégicas com grandes instituições, como a Biblioteca de Jacarta, para mapear ambientes e aprimorar os recursos.</>,
+      <><strong>Pioneirismo em Acessibilidade:</strong> Lançamento do primeiro aplicativo de navegação para ambientes internos da Indonésia focado inteiramente em acessibilidade visual.</>,
     ],
-    result: "Mapeamento colaborativo de 300+ locais acessíveis, premiado no Apple WWDC Student Challenge.",
-    techs: ["SwiftUI", "MapKit", "VoiceOver", "CloudKit"],
+    result: "Criação de uma ferramenta pioneira e um 'presente' tecnológico que devolve a independência e a segurança de locomoção para milhares de usuários.",
+    techs: ["ARKit", "Swift", "Acessibilidade", "Navegação Espacial"],
   },
 ];
 
 const DevPortfolio = ({ open, onOpenChange }: DevPortfolioProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[90vh] flex flex-col overflow-hidden">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold flex items-center gap-2">
             <Trophy className="h-6 w-6 text-academy-yellow" />
@@ -75,31 +78,47 @@ const DevPortfolio = ({ open, onOpenChange }: DevPortfolioProps) => {
           </DialogDescription>
         </DialogHeader>
 
-        <Tabs defaultValue="dev-0" className="mt-4">
-          <TabsList className="w-full grid grid-cols-3">
+        <Tabs defaultValue="dev-0" className="mt-4 flex-1 flex flex-col min-h-0">
+          <TabsList className="w-full grid grid-cols-3 shrink-0">
             {devs.map((dev, i) => (
-              <TabsTrigger key={i} value={`dev-${i}`} className="text-xs sm:text-sm">
-                {dev.photo} {dev.name.split(" ")[0]}
+              <TabsTrigger key={i} value={`dev-${i}`} className="text-xs sm:text-sm flex items-center gap-2">
+                <img src={dev.image} alt={dev.name} className="h-5 w-5 rounded-full object-cover hidden sm:block" />
+                {dev.name.split(" ")[0]}
               </TabsTrigger>
             ))}
           </TabsList>
 
           {devs.map((dev, i) => (
-            <TabsContent key={i} value={`dev-${i}`}>
+            <TabsContent key={i} value={`dev-${i}`} className="flex-1 min-h-0 mt-4">
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="space-y-4"
+                className="space-y-4 max-h-[60vh] overflow-y-auto pr-2 pb-4"
               >
-                {/* Dev info */}
-                <div className="flex items-center gap-3 p-4 rounded-lg bg-muted/50">
-                  <span className="text-4xl">{dev.photo}</span>
+                {/* === AQUI É ONDE FICA A FOTO GRANDE DO PERFIL === */}
+                <div className="flex items-center gap-4 p-4 rounded-xl bg-muted/50">
+                  <img 
+                    src={dev.image} 
+                    alt={`Foto de ${dev.name}`} 
+                    className="h-16 w-16 rounded-full object-cover shadow-sm border-2 border-background" 
+                  />
                   <div>
-                    <h3 className="font-bold text-foreground">{dev.name}</h3>
+                    <h3 className="font-bold text-foreground text-lg">{dev.name}</h3>
                     <p className="text-sm text-muted-foreground">{dev.role}</p>
                   </div>
                 </div>
+
+                {/* === AQUI ENTRA A FOTO DE DEMONSTRAÇÃO DO APP === */}
+                {dev.appImage && (
+                  <div className="w-full overflow-hidden rounded-xl shadow-sm border border-border/50 bg-muted/20">
+                    <img 
+                      src={dev.appImage} 
+                      alt={`Demonstração do app ${dev.case}`} 
+                      className="w-full h-auto max-h-[500px] object-contain" 
+                    />
+                  </div>
+                )}
 
                 {/* Case */}
                 <Card className="border-academy-blue/30" style={{ background: "var(--gradient-card-blue)" }}>
